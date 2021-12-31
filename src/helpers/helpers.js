@@ -12,7 +12,7 @@ export const randomWords = () => {
     let newWordPairs = [...wordPairs]
     const reps = newWordPairs.length
     for (let i = 0; i < reps; i++) {
-        const wordIndex = Math.floor(Math.random() * reps)
+        const wordIndex = Math.floor(Math.random() * newWordPairs.length)
         words.push(newWordPairs[wordIndex])
         newWordPairs.splice(wordIndex, 1)
     }
