@@ -3,6 +3,7 @@ import Card from '../Card/Card';
 
 const CardRow = ({ cards }) => {
 
+
     const content = cards.map(card =>
         <Card
             key={card.id}
