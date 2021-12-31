@@ -46,6 +46,9 @@ export const boardReducer = (state = initialState, action) => {
             }
             return flipState
 
+        case 'board/resetCards':
+            return state.map(card => ({ ...card, visible: false }))
+
         default:
             return state
     }
@@ -63,6 +66,12 @@ export const flipCard = (id) => {
     return {
         type: 'board/flipCard',
         payload: id
+    }
+}
+
+export const resetCards = () => {
+    return {
+        type: 'board/resetCards'
     }
 }
 

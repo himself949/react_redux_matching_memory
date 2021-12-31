@@ -1,6 +1,6 @@
 import { useDispatch } from "react-redux";
 import Board from "../features/board/Board";
-import { setBoard } from "../features/board/boardSlice";
+import { resetCards, setBoard } from "../features/board/boardSlice";
 
 function App() {
 
@@ -8,6 +8,10 @@ function App() {
 
   const startGameHandler = () => {
     dispatch(setBoard())
+  }
+
+  const tryAgainHandler = () => {
+    dispatch(resetCards())
   }
 
   return (
@@ -18,9 +22,9 @@ function App() {
         <button onClick={startGameHandler} className="start-button">
           Start Game
         </button>
-        {/*<button onClick={tryAgainHandler} className="try-new-pair-button">
+        <button onClick={tryAgainHandler} className="try-new-pair-button">
           Try New Pair
-        </button>*/}
+        </button>
       </footer>
     </div>
   );
