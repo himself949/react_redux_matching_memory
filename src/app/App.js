@@ -1,6 +1,7 @@
 import { useDispatch } from "react-redux";
-import Board from "../features/board/Board";
-import { resetCards, setBoard } from "../features/board/boardSlice";
+import { resetCards, setBoard } from "../features/Board/boardSlice";
+import Board from "../features/Board/Board";
+import Score from "../features/Score/Score";
 
 function App() {
 
@@ -16,7 +17,7 @@ function App() {
 
   return (
     <div className="App">
-      {/*<Score />*/}
+      <Score />
       <Board />
       <footer className="footer">
         <button onClick={startGameHandler} className="start-button">

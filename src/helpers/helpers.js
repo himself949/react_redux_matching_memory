@@ -7,14 +7,12 @@ const wordPairs = [
     'react-redux', 'react-redux',
 ]
 
-
-//could be improved
 export const randomWords = () => {
     let words = []
     let newWordPairs = [...wordPairs]
     const reps = newWordPairs.length
     for (let i = 0; i < reps; i++) {
-        const wordIndex = Math.floor(Math.random() * newWordPairs.length)
+        const wordIndex = Math.floor(Math.random() * reps)
         words.push(newWordPairs[wordIndex])
         newWordPairs.splice(wordIndex, 1)
     }
