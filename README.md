@@ -1,70 +1,21 @@
-# Getting Started with Create React App
+React-Redux app created using guidelines and CSS from Codecademy's Learn Redux course. Base files saved in Base Data folder.
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+Users can play a 1-player game where they aim to find matching pairs of cards.
 
-## Available Scripts
+The app makes use of createStore and combineReducers
 
-In the project directory, you can run:
+Board Slice includes a reducer to control the state.
 
-### `npm start`
+board/SetBoard creates a new state with the initial cards in a random order. This is using a setBoard action which uses a randomWords function. This function is saved within Helpers
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+board/flipCard uses the flipCard action to set the visibility of a chosen card to true. If there are 2 cards selected both with the same content, the visibility is changed to false and the matched property is set to true.
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+board/resetCards uses the resetCards action to set the visibility of all cards to false.
 
-### `npm test`
+The selectors selectBoard, selectVisibleIDs and selectMatchedIDs are used within components of the app.
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
-
-### `npm run build`
-
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
-
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
-
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
-
-### `npm run eject`
-
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
-
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
-
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+Card component controls each card. Initially cards have a styling of 'resting', a click handler of flipCard and text set to the logo.
+If a card is clicked its contents are revealed and the click handler is nullified
+If two cards are selected, the click handler becomes resetCards
+If two matching cards are selected, the style is set to 'matched'
+If two non-matching cards are selected, the style is set to 'no-match'
