@@ -1,19 +1,44 @@
 import { randomWords } from '../../helpers/helpers'
 
 const initialState = [
-    { id: 0, contents: 'Provider', visible: true, matched: true },
-    { id: 1, contents: 'Provider', visible: true, matched: true },
-    { id: 2, contents: 'selector', visible: true, matched: true },
-    { id: 3, contents: 'selector', visible: true, matched: true },
-    { id: 4, contents: 'useSelector()', visible: true, matched: true },
-    { id: 5, contents: 'useSelector()', visible: true, matched: true },
-    { id: 6, contents: 'useDispatch()', visible: true, matched: true },
-    { id: 7, contents: 'useDispatch()', visible: true, matched: true },
-    { id: 8, contents: 'Pure Function', visible: true, matched: true },
-    { id: 9, contents: 'Pure Function', visible: true, matched: true },
-    { id: 10, contents: 'react-redux', visible: true, matched: true },
-    { id: 11, contents: 'react-redux', visible: true, matched: true },
+    { id: 0, contents: 'Mercury', visible: true, matched: true },
+    { id: 1, contents: 'Mercury', visible: true, matched: true },
+    { id: 2, contents: 'Venus', visible: true, matched: true },
+    { id: 3, contents: 'Venus', visible: true, matched: true },
+    { id: 4, contents: 'Earth', visible: true, matched: true },
+    { id: 5, contents: 'Earth', visible: true, matched: true },
+    { id: 6, contents: 'Mars', visible: true, matched: true },
+    { id: 7, contents: 'Mars', visible: true, matched: true },
+    { id: 8, contents: 'Jupiter', visible: true, matched: true },
+    { id: 9, contents: 'Jupiter', visible: true, matched: true },
+    { id: 10, contents: 'Saturn', visible: true, matched: true },
+    { id: 11, contents: 'Saturn', visible: true, matched: true },
+    { id: 12, contents: 'Uranus', visible: true, matched: true },
+    { id: 13, contents: 'Uranus', visible: true, matched: true },
+    { id: 14, contents: 'Neptune', visible: true, matched: true },
+    { id: 15, contents: 'Neptune', visible: true, matched: true },
 ];
+
+export const setBoard = () => {
+    const words = randomWords()
+    return {
+        type: 'board/setBoard',
+        payload: words
+    }
+}
+
+export const flipCard = (id) => {
+    return {
+        type: 'board/flipCard',
+        payload: id
+    }
+}
+
+export const resetCards = () => {
+    return {
+        type: 'board/resetCards'
+    }
+}
 
 export const boardReducer = (state = initialState, action) => {
     switch (action.type) {
@@ -54,26 +79,6 @@ export const boardReducer = (state = initialState, action) => {
     }
 }
 
-export const setBoard = () => {
-    const words = randomWords()
-    return {
-        type: 'board/setBoard',
-        payload: words
-    }
-}
-
-export const flipCard = (id) => {
-    return {
-        type: 'board/flipCard',
-        payload: id
-    }
-}
-
-export const resetCards = () => {
-    return {
-        type: 'board/resetCards'
-    }
-}
 
 export const selectBoard = state => state.board.map(card => ({
     id: card.id,

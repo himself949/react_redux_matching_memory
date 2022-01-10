@@ -1,0 +1,67 @@
+redux
+	state management library
+	follows flux architecture
+	state stored in single object, not components
+	state changed using actions
+	reducers respond to actions & define new state
+	more manageable, reliable, maintainable
+
+
+intro
+	guidleines from codecademy
+	card matching game
+	start game randomises cards
+	failed match is red
+	new pair resets cards
+	clicking on card resets cards
+	matching pair is green
+	score board updated
+
+index
+	provider
+
+store
+	should be in app folder
+	contains state
+	executes reducer
+	combine reducer used for multiple slices
+
+boardSlice
+	initial state has all cards showing words and matched
+	board reducer could use createSlice
+	setBoard randomises card order, sets vsibility and matched to false
+	flip
+		sets visibility of chosen card to true
+		finds visibile cards
+		if there are 2, visibility becomes false and matched is true
+		returns updated state
+	reset sets visible to false
+	selectors pick required information for components
+
+helpers
+	randomiser takes words and randomly adds them to a new array
+
+app
+	dispatch creates reference to redux function
+	functions used to dispatch action
+	buttons have functions
+
+score
+	renders score using matchedIDs selector
+	useSelector uses the selector on the state
+	only renders if slice changes - efficient
+
+Board
+	selectr board selector
+	number of rows calculated
+	cards added to each row
+	rows added to content
+
+cardRow
+	renders each card
+
+Card
+	selectors for visible and macthed cards
+	functions for flip and reset cards
+	card is a button, card text is image or content
+	class changes when card is flipped

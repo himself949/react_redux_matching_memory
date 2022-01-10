@@ -7,8 +7,8 @@ const Board = () => {
 
     const currentBoard = useSelector(selectBoard)
     const numberOfCards = currentBoard.length
-    const columns = 3
-    const rows = Math.floor(numberOfCards / columns)
+    const columns = 4
+    const rows = Math.ceil(numberOfCards / columns)
 
     const getRowCards = (row) => {
         const rowCards = []

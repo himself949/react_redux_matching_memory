@@ -1,10 +1,12 @@
 const wordPairs = [
-    'Provider', 'Provider',
-    'selector', 'selector',
-    'useSelector()', 'useSelector()',
-    'useDispatch()', 'useDispatch()',
-    'Pure Function', 'Pure Function',
-    'react-redux', 'react-redux',
+    'Mercury', 'Mercury',
+    'Venus', 'Venus',
+    'Earth', 'Earth',
+    'Mars', 'Mars',
+    'Jupiter', 'Jupiter',
+    'Saturn', 'Saturn',
+    'Uranus', 'Uranus',
+    'Neptune', 'Neptune',
 ]
 
 export const randomWords = () => {
